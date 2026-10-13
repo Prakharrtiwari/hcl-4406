@@ -1,4 +1,4 @@
-package exception;
+
 
 class InvalidAgeException extends Exception {
     InvalidAgeException(String message) {
@@ -16,10 +16,10 @@ class Main {
             System.out.println("Program finished");
         }
     }
-
+  
     static void checkAge(int age) throws InvalidAgeException {
         if (age < 18) {
-            throw new InvalidAgeException("Age must be 18 or above");
+            throw new InvalidAgeException("Age must be 18 or aboveeee");
         }
         System.out.println("Valid age");
     }
