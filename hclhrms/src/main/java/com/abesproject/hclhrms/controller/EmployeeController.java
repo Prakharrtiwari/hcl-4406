@@ -23,4 +23,14 @@ public class EmployeeController {
     public List<Employee> getEmp(){
         return employeeServiceImp.getemp();
     }
+
+    @GetMapping("/getempbyid")
+    public  Employee getempbyid(){
+        return employeeServiceImp.getEmpbyid();
+    }
+
+    @GetMapping("/bulk")
+    public String addBulkEmployees(){
+        return employeeServiceImp.addEmpBulk();
+    }
 }

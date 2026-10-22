@@ -16,6 +16,13 @@ public class EmpRepInf implements EmployeeRepo{
         return "Employee added successfully!";
     }
 
+    @Override
+    public String addEmpBulk(List<Employee> employeeList) {
+        if (employeeList != null) {
+            emplist.addAll(employeeList);
+        }
+        return "Bulk employees added successfully!";
+    }
 
 
     @Override
@@ -25,7 +32,8 @@ public class EmpRepInf implements EmployeeRepo{
 
     @Override
     public Employee getEmpById(long empid) {
-        return null;
+        return emplist.stream().filter(e->e.getEmp_id()==empid).findFirst().orElse(null);
+
     }
 
     @Override

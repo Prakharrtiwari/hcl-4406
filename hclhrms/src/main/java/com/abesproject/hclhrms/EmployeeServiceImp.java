@@ -17,11 +17,22 @@ public class EmployeeServiceImp {
 
         Employee empl=new Employee(200, "Rahul", "FSD",
                 "java", "rahul@gmail.com");
-        return emprepo.addemp(empl);
+        return emprepo.addEmp(empl);
 
 
     }
     public List<Employee> getemp(){
         return emprepo.getEmp();
+    }
+    public Employee getEmpbyid(){
+        return emprepo.getEmpById(200);
+    }
+
+    public String addEmpBulk(){
+        List<Employee> employeeList = List.of(
+                new Employee(897, "sonu", "inspector", "FSD", "sonu@gmail.com"),
+                new Employee(565, "ramesh", "chor", "flutter", "ramesh@gmail.com")
+        );
+        return emprepo.addEmpBulk(employeeList);
     }
 }
