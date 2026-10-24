@@ -31,5 +31,9 @@ public class EmployeeService {
         employeeRepository.deleteById(id);
         return "Done";
     }
+    public String deleteall(){
+        employeeRepository.deleteAll();
+        return "Done";
+    }
 
 }

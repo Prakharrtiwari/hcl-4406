@@ -41,4 +41,9 @@ public class EmployeeController {
         return employeeService.deletebyid(empid);
     }
 
+    @DeleteMapping("/deleteall")
+    public String deleteall(){
+        return employeeService.deleteall();
+    }
+
 }
