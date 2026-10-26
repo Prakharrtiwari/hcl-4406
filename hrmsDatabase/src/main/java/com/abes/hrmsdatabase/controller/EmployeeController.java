@@ -3,15 +3,13 @@ package com.abes.hrmsdatabase.controller;
 import com.abes.hrmsdatabase.model.Employee;
 import com.abes.hrmsdatabase.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin("http://localhost:5173/")
 public class EmployeeController {
     @Autowired
 
