@@ -1,47 +1,28 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+
 import './App.css'
-import SampleCode from './component/SampleCode'
-import { UseFetchApi } from './component/UseFetchApi'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './component/Home'
+import Login from './component/Login'
+import Registeration from './component/Registeration'
+import Dashboard from './component/Dashboard'
+
 
 function App() {
-  // const employee = [{
-  //   empid: "76356747",
-  //   ename: "Deepak"
-  // }, {
-  //   empid: "76357888",
-  //   ename: "Aashish"
-  // },
-  // {
-  //   empid: "78999947",
-  //   ename: "Ravi"
-  // }
-  //]
 
   return (
 
     <>
-      <h2>Welcome to HCL HRMS Application</h2>
       <div>
-        {
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/registeration" element={<Registeration />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Routes>
+        </BrowserRouter>
 
 
-          /* <SampleCode empdata={employee[2]} /> */
-          // employee.map(emp => (
-
-          //   <h2>
-          //     <SampleCode empdata={emp} />
-          //   </h2>
-          // ))
-
-
-
-
-
-          <UseFetchApi />
-        }
       </div>
     </>
   )

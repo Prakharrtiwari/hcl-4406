@@ -10,6 +10,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin("http://localhost:5173/")
+@RequestMapping("/v1/user")
 public class EmployeeController {
     @Autowired
 
@@ -20,9 +21,10 @@ public class EmployeeController {
         return "Chal gya project!! Khush ho jaaa";
     }
 
-    @GetMapping("/addemp")
-    public  String addnewEmployee(){
-        return employeeService.createNewEmployee();
+    @PostMapping("/addemp")
+    public  String addnewEmployee(@RequestBody Employee emp){
+
+        return employeeService.createNewEmployee(emp);
     }
 
     @GetMapping("/getall")

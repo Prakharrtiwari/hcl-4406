@@ -14,9 +14,11 @@ public class EmployeeService {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    public String createNewEmployee(){
-        Employee empl =new Employee(400,"Ram","FSD","Teacher");
-        employeeRepository.save(empl);
+    public String createNewEmployee(Employee newEmp){
+//        Employee empl =new Employee(400,"Ram","FSD","Teacher");
+        employeeRepository.save(newEmp);
+
+
         return "Employee is added succsessfuly";
     }
     public List<Employee> getAllEmployee(){

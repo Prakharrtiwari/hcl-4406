@@ -9,12 +9,23 @@ public class Employee {
     private  long emp_id;
     private  String emp_name;
     private  String stack;
+    private  String email;
+    private  String password;
 
     public Employee(long emp_id, String emp_name, String stack, String designation) {
         this.emp_id = emp_id;
         this.emp_name = emp_name;
         this.stack = stack;
         this.designation = designation;
+    }
+
+    public Employee(long emp_id, String emp_name, String email, String designation, String stack, String password) {
+        this.emp_id = emp_id;
+        this.emp_name = emp_name;
+        this.email = email;
+        this.designation = designation;
+        this.stack = stack;
+        this.password = password;
     }
 
     private String designation;
@@ -37,8 +48,10 @@ public class Employee {
         return "Employee{" +
                 "emp_id=" + emp_id +
                 ", emp_name='" + emp_name + '\'' +
-                ", stack='" + stack + '\'' +
+                ", email='" + email + '\'' +
                 ", designation='" + designation + '\'' +
+                ", stack='" + stack + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 
@@ -66,5 +79,20 @@ public class Employee {
         this.designation = designation;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
 }
