@@ -46,4 +46,10 @@ public class EmployeeController {
         return employeeService.deleteall();
     }
 
+    @PostMapping("/login")
+    public String login(@RequestParam long empid, @RequestParam String password){
+        return employeeService.login(empid, password);
+    }
+
+
 }

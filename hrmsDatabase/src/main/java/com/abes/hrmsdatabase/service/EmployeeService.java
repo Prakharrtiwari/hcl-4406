@@ -38,4 +38,24 @@ public class EmployeeService {
         return "Done";
     }
 
+    public String login(long empid, String password) {
+        Optional<Employee> empOpt = employeeRepository.findById(empid);
+        if (empOpt.isPresent()) {
+            Employee emp = empOpt.get();
+            if (emp.getPassword() != null && emp.getPassword().equals(password)) {
+                return "Login Successful";
+            } else {
+                return "Invalid Password";
+            }
+        }
+        return "Employee not found";
+    }
+
+    public String verification(Employee emp) {
+        if (emp == null) {
+            return "Employee data missing";
+        }
+        return login(emp.getEmp_id(), emp.getPassword());
+    }
+
 }
