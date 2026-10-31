@@ -36,7 +36,7 @@ public class SecurityConfig {
                         f -> f.sameOrigin()))
                 .authorizeHttpRequests(
                         auth -> auth.requestMatchers(
-                                        "/api/v1/auth/**", "/h2-console/**", "/error").permitAll()
+                                        "/api/v1/**", "/h2-console/**", "/swagger-ui/**", "/v3/api-docs/**", "/error").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/api/v1/posts/**").permitAll()
                                 .requestMatchers(HttpMethod.POST, "/api/v1/posts/**").authenticated()
                                 .anyRequest().authenticated()
@@ -59,7 +59,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration cfg = new CorsConfiguration();
-        cfg.setAllowedOrigins(List.of("http://localhost:5173"));
+        cfg.setAllowedOrigins(List.of("http://localhost:5173", "http://localhost:5173/"));
         cfg.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         cfg.setAllowedHeaders(List.of("*"));
 
@@ -68,4 +68,3 @@ public class SecurityConfig {
         return src;
     }
 }
-
