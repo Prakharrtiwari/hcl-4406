@@ -5,6 +5,13 @@ export function sayHello(name) {
   return `Hello, ${name}!`;
 }
 
-export function add(a, b) {
-  return a + b;
+export function greetInHindi(name) {
+  if (!name) {
+    return 'नमस्ते, अतिथि!';
+  }
+  return `नमस्ते, ${name}!`;
 }
+
+// export function add(a, b) {
+//   return a + b;
+// }
