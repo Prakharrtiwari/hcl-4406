@@ -1,3 +1,7 @@
+export const greet = (name) => {
+  return `Hello, ${name}`;
+};
+
 export function sayHello(name) {
   if (!name) {
     return 'Hello, Guest!';

@@ -1,6 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert';
-import { sayHello, greetInHindi, processOrder, processPayment } from '../app.js';
+import { greet, sayHello, greetInHindi, processOrder, processPayment } from '../app.js';
+
+test('greet returns greeting with name', () => {
+  const result = greet('John');
+  assert.strictEqual(result, 'Hello, John');
+});
 
 test('sayHello returns greeting with provided name', () => {
   const result = sayHello('Rahul');
