@@ -125,4 +125,73 @@ use school_db;
 -- where score < 20;
 
 
+-- ------------------------------------------------------------------------------------------------
+-- DQL COMMANDS
+-- TASK1
 
+-- Select * from students;
+
+-- Select name as student_name,hometown from students;
+
+
+
+-- Select * from students where age>10 && age<15;
+
+-- Select * from students where name like 'A%'
+
+-- Select * from students where hometown='Delhi' || hometown='Noida' ORDER BY age desc;
+
+-- Select * from students where hometown in ('Delhi','Noida') ORDER BY age desc;
+
+-- Select * from students 
+-- ORDER BY age desc 
+-- limit 3;
+
+-- Select DISTINCT hometown from students;
+
+-- --------------------------------------------------------------------------------------------------------------
+-- TASK 2
+
+
+-- select hometown , count(*) as student_count
+-- from students
+-- group by hometown; 
+
+-- select subject,
+-- AVG(score) as avg_score,
+-- MIN(score) as min_score,
+-- MAX(score) as max_score
+-- from marks
+-- group by subject;
+
+-- select subject,
+-- avg(score) as avg_score
+-- from marks group by subject
+-- having avg_score>60;
+
+
+
+-- SELECT 
+--     s.name, 
+--     m.subject, 
+--     m.score
+-- FROM students s
+-- LEFT JOIN marks m ON s.student_id = m.student_id;
+
+
+
+-- SELECT 
+--     s.name, 
+--     m.subject, 
+--     m.score
+-- FROM students s
+-- INNER JOIN marks m ON s.student_id = m.student_id
+-- WHERE m.score > (SELECT AVG(score) FROM marks);
+
+-- SELECT 
+--     s.name,
+--     SUM(m.score) AS total_marks,
+--     RANK() OVER (ORDER BY SUM(m.score) DESC) AS student_rank
+-- FROM students s
+-- INNER JOIN marks m ON s.student_id = m.student_id
+-- GROUP BY s.student_id, s.name;
